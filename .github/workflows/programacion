@@ -1,0 +1,23 @@
+import tkinter as tk
+
+def agregar_caracter(caracter):
+    entrada_texto.insert(tk.END, caracter)
+
+root = tk.Tk()
+root.title("Teclado Virtual")
+
+entrada_texto = tk.Text(root, height=5, width=30)
+entrada_texto.pack()
+
+teclas = [
+    'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ñ',
+    'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Ñ', 'O', 'P',
+    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Z',
+]
+
+for tecla in teclas:
+    boton = tk.Button(root, text=tecla, command=lambda t=tecla: agregar_caracter(t))
+    boton.pack(side=tk.LEFT)
+
+root.mainloop()
